@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <!-- Эта строка делает страницу удобной на телефоне -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мой Quizlet</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========== ЭКРАН ВХОДА ========== -->
+  <section id="login-screen" class="card hidden">
+    <h1>📚 Мой Quizlet</h1>
+    <form id="login-form">
+      <input type="email" id="login-email" placeholder="Email" required>
+      <input type="password" id="login-password" placeholder="Пароль" required>
+      <button type="submit">Войти</button>
+    </form>
+    <p id="login-error" class="error"></p>
+  </section>
+
+  <!-- ========== ЭКРАН ПРИЛОЖЕНИЯ ========== -->
+  <section id="app-screen" class="hidden">
+
+    <header class="topbar">
+      <h1>📚 Мой Quizlet</h1>
+      <button id="logout-btn" class="secondary">Выйти</button>
+    </header>
+
+    <!-- Статистика -->
+    <div class="stats">
+      <div class="stat"><b id="stat-total">0</b><span>всего</span></div>
+      <div class="stat"><b id="stat-new">0</b><span>новые</span></div>
+      <div class="stat"><b id="stat-learning">0</b><span>учу</span></div>
+      <div class="stat"><b id="stat-learned">0</b><span>выучено</span></div>
+    </div>
+
+    <!-- Форма добавления слова -->
+    <form id="add-form" class="card">
+      <h2>Добавить слово</h2>
+      <input id="f-word" placeholder="Слово на английском *" required>
+      <input id="f-translation" placeholder="Перевод *" required>
+      <input id="f-transcription" placeholder="Транскрипция (необязательно)">
+      <input id="f-example" placeholder="Пример (необязательно)">
+      <input id="f-source" placeholder="Источник: книга, курс... (необязательно)">
+      <button type="submit">Добавить</button>
+      <p id="add-message"></p>
+    </form>
+
+    <!-- Список слов -->
+    <div class="card">
+      <h2>Мои слова</h2>
+      <ul id="word-list"></ul>
+    </div>
+
+  </section>
+
+  <!-- Библиотека Supabase (готовый код для работы с базой) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <!-- Наш код -->
+  <script src="app.js"></script>
+</body>
+</html>
