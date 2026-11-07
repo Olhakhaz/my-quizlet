@@ -114,6 +114,7 @@ button.delete {
   width: auto;
   padding: 6px 10px;
   background: transparent;
+  color: #d6334a;
   font-size: 18px;
 }
 button.delete:hover { background: #fdecef; }
